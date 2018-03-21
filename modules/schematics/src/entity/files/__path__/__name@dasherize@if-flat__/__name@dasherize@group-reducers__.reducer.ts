@@ -17,43 +17,43 @@ export function reducer(
   action: <%= classify(name) %>Actions
 ): State {
   switch (action.type) {
-    case <%= classify(name) %>ActionTypes.Add<%= classify(name) %>: {
+    case <%= classify(name) %>ActionTypes.ADD_<%= underscore(name).toUpperCase() %>_ACTION: {
       return adapter.addOne(action.payload.<%= camelize(name) %>, state);
     }
 
-    case <%= classify(name) %>ActionTypes.Upsert<%= classify(name) %>: {
+    case <%= classify(name) %>ActionTypes.UPSERT_<%= underscore(name).toUpperCase() %>_ACTION: {
       return adapter.upsertOne(action.payload.<%= camelize(name) %>, state);
     }
 
-    case <%= classify(name) %>ActionTypes.Add<%= classify(name) %>s: {
+    case <%= classify(name) %>ActionTypes.ADD_<%= underscore(name).toUpperCase() %>S_ACTION: {
       return adapter.addMany(action.payload.<%= camelize(name) %>s, state);
     }
 
-    case <%= classify(name) %>ActionTypes.Upsert<%= classify(name) %>s: {
+    case <%= classify(name) %>ActionTypes.UPSERT_<%= underscore(name).toUpperCase() %>S_ACTION: {
       return adapter.upsertMany(action.payload.<%= camelize(name) %>s, state);
     }
 
-    case <%= classify(name) %>ActionTypes.Update<%= classify(name) %>: {
+    case <%= classify(name) %>ActionTypes.UPDATE_<%= underscore(name).toUpperCase() %>_ACTION: {
       return adapter.updateOne(action.payload.<%= camelize(name) %>, state);
     }
 
-    case <%= classify(name) %>ActionTypes.Update<%= classify(name) %>s: {
+    case <%= classify(name) %>ActionTypes.UPDATE_<%= underscore(name).toUpperCase() %>S_ACTION: {
       return adapter.updateMany(action.payload.<%= camelize(name) %>s, state);
     }
 
-    case <%= classify(name) %>ActionTypes.Delete<%= classify(name) %>: {
+    case <%= classify(name) %>ActionTypes.DELETE_<%= underscore(name).toUpperCase() %>_ACTION: {
       return adapter.removeOne(action.payload.id, state);
     }
 
-    case <%= classify(name) %>ActionTypes.Delete<%= classify(name) %>s: {
+    case <%= classify(name) %>ActionTypes.DELETE_<%= underscore(name).toUpperCase() %>S_ACTION: {
       return adapter.removeMany(action.payload.ids, state);
     }
 
-    case <%= classify(name) %>ActionTypes.Load<%= classify(name) %>s: {
+    case <%= classify(name) %>ActionTypes.LOAD_<%= underscore(name).toUpperCase() %>S_ACTION: {
       return adapter.addAll(action.payload.<%= camelize(name) %>s, state);
     }
 
-    case <%= classify(name) %>ActionTypes.Clear<%= classify(name) %>s: {
+    case <%= classify(name) %>ActionTypes.CLEAR_<%= underscore(name).toUpperCase() %>S_ACTION: {
       return adapter.removeAll(state);
     }
 
